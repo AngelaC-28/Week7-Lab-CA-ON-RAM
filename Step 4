@@ -1,0 +1,5 @@
+SELECT * FROM Accounts WHERE AccountID = '' OR 1=1;
+PREPARE stmt FROM 'SELECT * FROM Accounts WHERE AccountID = ?';
+SET @holder = 'Alice Johnson';
+EXECUTE stmt USING @holder;
+DEALLOCATE PREPARE stmt;
